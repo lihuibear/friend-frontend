@@ -23,18 +23,29 @@
       v-model:main-active-index="activeIndex"
       :items="tagList"
   />
+
+<div style="padding: 12px">
+  <van-button block type="primary" @click="doSearchResult">
+    搜索
+  </van-button>
+</div>
+
+
 </template>
 
 <script setup lang="ts">
 
+import {useRouter} from "vue-router";
+
+
 import {ref} from 'vue';
 
+const router = useRouter();
 //已选中的标签
 
 const searchText = ref('');
 const activeIds = ref([]);
 const activeIndex = ref(0);
-
 
 const originTagList = [
   {
@@ -61,7 +72,6 @@ const originTagList = [
   },
 ];
 
-
 // 标签列表
 let tagList = ref(originTagList);
 /**
@@ -80,11 +90,20 @@ const onCancel = (val) => {
   searchText.value = '';
   tagList.value = originTagList;
 }
-
-
 //移除标签
 const doClose = (tag) => {
   activeIds.value = activeIds.value.filter(item => item !== tag);
+}
+
+/**
+ * 点击搜索后 跳转页面
+ * 执行搜索
+ */
+const doSearchResult = () => {
+  router.push({
+    path: '/user/list',
+    query: {tags: activeIds.value}
+  });
 }
 </script>
 
