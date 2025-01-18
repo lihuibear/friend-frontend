@@ -1,22 +1,5 @@
 <template>
-  <van-card
-      v-for="user in userList"
-      :desc="user.profile"
-      :title="`${user.username}(${user.planetCode})`"
-      :thumb="user.avatarUrl"
-  >
-    <template #tags>
-      <van-tag plain type="primary" v-for="tag in user.tags" style="margin-right: 8px;margin-top: 8px">{{
-          tag
-        }}
-      </van-tag>
-
-    </template>
-    <template #footer>
-      <van-button size="mini">联系我</van-button>
-      <!--   改成邮箱等   todo-->
-    </template>
-  </van-card>
+  <user-card-list :user-list="userList"/>
   <van-empty v-if="!userList || userList.length<1" description="搜索结果为空"/>
 
 </template>
@@ -24,9 +7,10 @@
 <script setup>
 import {useRoute} from "vue-router";
 import {onMounted, ref} from "vue";
-import myAxios from "../plugins/myAxios";
 import qs from "qs";
 import {showFailToast, showSuccessToast} from "vant";
+import myAxios from "../plugins/myAxios.ts";
+import UserCardList from "../components/UserCardList.vue";
 //已选中的标签
 
 const route = useRoute();
@@ -48,7 +32,7 @@ onMounted(async () => {
     console.log('/user/search/tags succeed', response);
     showSuccessToast('搜索成功');
     console.log(response.data);
-    return response.data;
+    return response?.data;
   })
       .catch(function (error) {
         // 处理错误情况

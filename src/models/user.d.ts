@@ -6,14 +6,14 @@ export type UserType = {
     id: number;
     username: string;
     userAccount: string;
-    avatarurl?: string;
+    avatarUrl?: string;
     profile: string;
     gender: Gender;
     phone: string;
     email: string;
     userStatus: UserStatus;
     userRole: UserRole;
-    planetcode: string;
+    planetCode: string;
     tags: string[];
     createTime: Date;
 };

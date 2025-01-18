@@ -27,7 +27,6 @@
 
 <script setup>
 import {ref} from 'vue';
-import {showToast} from 'vant';
 import {useRouter} from "vue-router";
 
 const router = useRouter();
@@ -39,11 +38,13 @@ const onClickRight = () => {
 }
 
 const active = ref("index");
-const onChange = (index) => showToast(`标签 ${index}`);
+// const onChange = (index) => showToast(`标签 ${index}`);
 
 </script>
 
 
 <style scoped>
-
+#content {
+  padding-bottom: 50px;
+}
 </style>
