@@ -30,11 +30,11 @@
 
 import {ref} from 'vue';
 import myAxios from "../plugins/myAxios.ts";
-import {showSuccessToast, Toast} from "vant";
-import {useRouter} from "vue-router";
+import {showSuccessToast} from "vant";
+import {useRoute, useRouter} from "vue-router";
 
 const router = useRouter();
-``
+const route = useRoute();
 
 const userAccount = ref('');
 const userPassword = ref('');
@@ -47,7 +47,8 @@ const onSubmit = async () => {
   if (res.code === 0 && res.data) {
     // Toast.success('登录成功');
     showSuccessToast('登录成功');
-    router.replace('/'); // todo 跳转到首页 替换历史记录 不是压入 点击返回 不会再回到登录页
+    const redirectUrl = route.query?.redirect as string ?? '/';
+    window.location.href = redirectUrl; // oktodo 跳转到首页 替换历史记录 不是压入 点击返回 不会再回到登录页
   }
 };
 

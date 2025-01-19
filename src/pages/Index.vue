@@ -7,7 +7,7 @@
 
   <!-- 加载中动画 -->
   <div v-if="loading" class="loading-container">
-    <van-loading size="24px" /> 💓正在为你匹配💓...
+    <van-loading size="24px" /> 💓正在为您匹配💓...
   </div>
 
   <!-- 用户卡片列表 -->

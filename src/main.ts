@@ -7,6 +7,7 @@ import 'vant/lib/index.css';
 import * as VueRouter from 'vue-router';
 import routes from './config/route'
 import "vant/es/toast/style"
+import "../global.css"
 
 
 const router = VueRouter.createRouter({

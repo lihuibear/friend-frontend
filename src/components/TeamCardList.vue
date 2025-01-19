@@ -2,7 +2,7 @@
   <div id="teamCardList">
     <van-card
         v-for="team in props.teamList"
-        :thumb="ikun"
+        :thumb="teampng"
         :desc="team.description"
         :title="`${team.name}`"
     >
@@ -40,8 +40,8 @@
         <van-button v-if="team.userId === currentUser?.id" size="small" type="danger" plain
                     @click="doDeleteTeam(team.id)">解散队伍
         </van-button>
-<!--        <p v-if="team.userId !== currentUser?.id && team.hasJoin">退出按钮条件: true</p>-->
-<!--        <p v-if="!(team.userId !== currentUser?.id && team.hasJoin)">退出按钮条件: false</p>-->
+        <!--        <p v-if="team.userId !== currentUser?.id && team.hasJoin">退出按钮条件: true</p>-->
+        <!--        <p v-if="!(team.userId !== currentUser?.id && team.hasJoin)">退出按钮条件: false</p>-->
       </template>
 
     </van-card>
@@ -55,8 +55,10 @@
 <script setup lang="ts">
 import {TeamType} from "../models/team";
 import {teamStatusEnum} from "../constants/team";
-import ikun from '../assets/ikun.png';
+// import ikun from '../assets/ikun.png';
+import teampng from '../assets/team.png';
 import myAxios from "../plugins/myAxios";
+
 import {showFailToast, showSuccessToast} from "vant";
 import {onMounted, ref} from "vue";
 import {getCurrentUser} from "../services/user";
@@ -175,7 +177,9 @@ const formatDate = (date: string) => {
 
 <style scoped>
 #teamCardList :deep(.van-image__img) {
-  height: 128px;
-  object-fit: unset;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 120px;
 }
 </style>
