@@ -1,4 +1,10 @@
 <template>
+  <van-notice-bar
+      left-icon="volume-o"
+      background="#ECF9FF"
+      color="#1989FA"
+      text="富强 民主 文明 和谐 自由 平等 公正 法制 爱国 敬业 诚信 友善"
+  />
   <van-cell center title="心动模式">
     <template #right-icon>
       <van-switch v-model="isMatchMode" size="24"/>

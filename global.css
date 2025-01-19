@@ -5,5 +5,24 @@
     right: 12px;
     height: 50px;
     border-radius: 50%;
-    z-index:999
+    z-index: 999
 }
+
+.login-and-register {
+    height: 100vh;
+    padding: 20px;
+    background-color: #f5f5f5; /* 淡灰色背景 */
+    backdrop-filter: blur(10px); /* 可选：添加模糊效果 */
+
+    .text {
+        text-align: center; /* 文字居中 */
+        font-size: 24px; /* 设置字体大小 */
+        font-weight: bold; /* 设置字体加粗 */
+        color: #333; /* 文字颜色 */
+        line-height: 1.5; /* 设置行高 */
+        margin-bottom: 16px; /* 添加底部间距 */
+    }
+}
+
+
+
