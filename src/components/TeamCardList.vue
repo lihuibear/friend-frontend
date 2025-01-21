@@ -34,7 +34,7 @@
                     @click="doUpdateTeam(team.id)">更新队伍
         </van-button>
         <!-- 仅加入队伍可见 -->
-        <van-button v-if="team.userId !== currentUser?.id && team.hasJoin" size="small" plain
+        <van-button v-if="team.hasJoin" size="small" plain
                     @click="doQuitTeam(team.id)">退出队伍
         </van-button>
         <van-button v-if="team.userId === currentUser?.id" size="small" type="danger" plain

@@ -157,12 +157,7 @@ const updateUserTags = async (operation: string, oldTag: string, newTag: string)
   transition: background-color 0.3s ease;
 }
 
-.complete-button {
-  width: 100%; /* 完成按钮占满整行 */
-  margin-bottom: 30px;
-  font-size: 16px;
-  height: 45px;
-}
+
 
 /* 标签样式 */
 .van-cell {
@@ -211,22 +206,24 @@ const updateUserTags = async (operation: string, oldTag: string, newTag: string)
 }
 
 .add-tag-button {
-  width: 100%;
-  font-size: 16px;
-  height: 45px;
-  position: fixed; /* 保持按钮固定在屏幕底部 */
-  bottom: 30px;  /* 离底部有一个间距 */
-  left: 0;
-  z-index: 10;
-}
-
-.complete-button {
   width: 100%; /* 完成按钮占满整行 */
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-size: 16px;
   height: 45px;
   position: fixed;
   bottom: 70px;  /* 完成按钮距离底部 */
+  left: 0;
+  z-index: 10;
+
+
+}
+
+.complete-button {
+  width: 100%;
+  font-size: 16px;
+  height: 45px;
+  position: fixed; /* 保持按钮固定在屏幕底部 */
+  bottom: 35px;  /* 离底部有一个间距 */
   left: 0;
   z-index: 10;
 }

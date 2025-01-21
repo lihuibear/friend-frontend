@@ -1,5 +1,4 @@
 <template>
-  <van-button color="#7232dd" plain @click="onEditClick">编辑</van-button>
 
   <van-cell-group>
     <!-- 显示用户标签并给每个标签不同的颜色 -->
@@ -10,6 +9,9 @@
         value=""
     />
   </van-cell-group>
+
+  <van-button color="#7232dd" class="edit-button" plain @click="onEditClick">编辑</van-button>
+
 </template>
 
 <script setup lang="ts">
@@ -56,5 +58,13 @@ const onEditClick = () => {
   display: inline-block; /* 使标签水平排列 */
   white-space: nowrap;   /* 防止标签文字换行 */
 }
-
+.edit-button {
+  width: 100%;
+  font-size: 16px;
+  height: 45px;
+  position: fixed; /* 保持按钮固定在屏幕底部 */
+  bottom: 35px;  /* 离底部有一个间距 */
+  left: 0;
+  z-index: 10;
+}
 </style>
