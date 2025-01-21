@@ -11,6 +11,8 @@ import UserPage from "../pages/UserPage.vue";
 import UserTeamCreatePage from "../pages/UserTeamCreatePage.vue";
 import UserTeamJoinPage from "../pages/UserTeamJoinPage.vue";
 import UserRegisterPage from "../pages/UserRegisterPage.vue";
+import UserTagsPage from "../pages/UserTagsPage.vue";
+import UserTagsEditPage from "../pages/UserTagsEditPage.vue";
 
 
 
@@ -26,6 +28,10 @@ const routes = [
     { path: '/user/edit', title: '编辑信息', component: UserEditPage },
     { path: '/user/login', title: '登录', component: UserLoginPage,meta: { hideLayout: true } },
     { path: '/user/register', title: '注册', component: UserRegisterPage,meta: { hideLayout: true } },
+
+    { path: '/user/tags', title: '我的标签', component: UserTagsPage },
+    { path: '/user/tags/edit', title: '编辑标签', component: UserTagsEditPage },
+
     { path: '/user/update', title: '更新信息', component: UserUpdatePage },
     { path: '/user/team/join', title: '加入队伍', component: UserTeamJoinPage },
     { path: '/user/team/create', title: '创建队伍', component: UserTeamCreatePage },
