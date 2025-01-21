@@ -10,7 +10,7 @@
     />
   </van-cell-group>
 
-  <van-button color="#7232dd" class="edit-button" plain @click="onEditClick">编辑</van-button>
+  <van-button color="#ff7f50" class="edit-button" plain @click="onEditClick">编辑</van-button>
 
 </template>
 
