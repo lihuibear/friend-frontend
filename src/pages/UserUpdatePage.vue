@@ -1,9 +1,15 @@
 <template>
+  <van-notice-bar
+      left-icon="volume-o"
+      background="#ECF9FF"
+      color="#1989FA"
+      text="由于服务器资源,头像仅支持链接上传,请自行上传到图床后填写链接🙏"
+  />
   <template v-if="user">
     <van-cell title="昵称" is-link to="/user/edit" :value="user.username"
               @click="toEdit('username','昵称',user.username)"/>
     <van-cell title="账号" :value="user.userAccount"/>
-    <van-cell title="头像" is-link to="/user/edit">
+    <van-cell title="头像" is-link to="/user/edit" @click="toEdit('avatarUrl','头像链接',user.avatarUrl)">
       <img style="height:48px" :src="user.avatarUrl"/>
     </van-cell>
 
@@ -13,7 +19,7 @@
     <van-cell title="电话" is-link to="/user/edit" :value="user.phone" @click="toEdit('phone','电话',user.phone)"/>
     <van-cell title="邮箱" is-link to="/user/edit" :value="user.email" @click="toEdit('email','邮箱',user.email)"/>
     <van-cell title="职业" is-link to="/user/edit" :value="user.profile" @click="toEdit('profile','职业',user.profile)"/>
-    <van-cell title="星球编号" :value="user.planetCode"/>
+<!--    <van-cell title="星球编号" :value="user.planetCode"/>-->
     <van-cell title="注册时间" :value="formatDate(user.createTime)"/>
     <van-cell title="我的标签" is-link to="/user/tags"/>
   </template>

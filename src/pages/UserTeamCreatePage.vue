@@ -1,7 +1,9 @@
 <template>
   <div id="teamPage">
     <van-search v-model="searchText" placeholder="搜索队伍" @search="onSearch" />
-    <van-button type="primary" @click="doJoinTeam">创建队伍</van-button>
+    <van-button class="add-button" type="primary" icon="plus" @click="doJoinTeam" />
+
+<!--    <van-button type="primary" @click="doJoinTeam">创建队伍</van-button>-->
     <team-card-list :teamList="teamList" />
     <van-empty v-if="teamList?.length < 1" description="数据为空"/>
   </div>
@@ -42,7 +44,8 @@ const listTeam = async (val = '') => {
   if (res?.code === 0) {
     teamList.value = res.data;
   } else {
-    showFailToast('加载队伍失败，请刷新重试');
+    // showFailToast('加载队伍失败，请刷新重试');
+    showFailToast('您还未创建队伍');
   }
 }
 

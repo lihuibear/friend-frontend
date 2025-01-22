@@ -34,7 +34,9 @@ const listTeam = async (val = '') => {
   if (res?.code === 0) {
     teamList.value = res.data;
   } else {
-    showFailToast('加载队伍失败，请刷新重试');
+    // showFailToast('加载队伍失败，请刷新重试');
+    showFailToast('您还未加入队伍');
+
   }
 }
 

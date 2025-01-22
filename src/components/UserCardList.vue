@@ -2,9 +2,12 @@
   <van-skeleton title avatar :row="3" :loading="props.loading" v-for="user in props.userList">
     <van-card
         :desc="user.profile"
-        :title="`${user.username}（${user.planetCode}）`"
+        :title="user.username"
         :thumb="user.avatarUrl"
     >
+
+<!--      :title="`${user.username}（${user.planetCode}）`"-->
+
       <template #tags>
         <van-tag plain type="danger" v-for="tag in user.tags" style="margin-right: 8px; margin-top: 8px">
           {{ tag }}
