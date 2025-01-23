@@ -35,12 +35,12 @@
             placeholder="请再次输入密码"
             :rules="[{ required: true, message: '请填写确认密码' }]"
         />
-        <van-field
-            v-model="planetCode"
-            name="邀请码"
-            label="邀请码"
-            placeholder="请输入邀请码（选填）"
-        />
+<!--        <van-field-->
+<!--            v-model="planetCode"-->
+<!--            name="邀请码"-->
+<!--            label="邀请码"-->
+<!--            placeholder="请输入邀请码（选填）"-->
+<!--        />-->
       </van-cell-group>
       <div style="margin: 16px;">
         <van-button round block type="primary" native-type="submit">
@@ -69,7 +69,7 @@ const router = useRouter();
 const userAccount = ref('');
 const userPassword = ref('');
 const checkPassword = ref('');
-const planetCode = ref('');
+// const planetCode = ref('');
 
 const onSubmit = async () => {
   if (userPassword.value !== checkPassword.value) {
@@ -81,7 +81,7 @@ const onSubmit = async () => {
     userAccount: userAccount.value,
     userPassword: userPassword.value,
     checkPassword: checkPassword.value,
-    planetCode: planetCode.value
+    // planetCode: planetCode.value
   });
 
   console.log(res, '用户注册');

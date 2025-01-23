@@ -69,8 +69,9 @@ const onSubmit = async () => {
   if (res.code === 0 && res.data) {
     // Toast.success('登录成功');
     showSuccessToast('登录成功');
-    const redirectUrl = route.query?.redirect as string ?? '/';
-    window.location.href = redirectUrl; // oktodo 跳转到首页 替换历史记录 不是压入 点击返回 不会再回到登录页
+    // const redirectUrl = route.query?.redirect as string ?? '/';
+    // window.location.href = redirectUrl; // oktodo 跳转到首页 替换历史记录 不是压入 点击返回 不会再回到登录页
+    router.push('/');
   }
 };
 
